@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ArashZomorrodi_01._08._30
 {
-    internal class MyNewTextbox : TextBox
+    public class MyNewTextbox : TextBox
     {
     }
 }

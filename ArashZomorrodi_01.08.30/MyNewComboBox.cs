@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ArashZomorrodi_01._08._30
 {
-    internal class MyNewComboBox : ComboBox
+    public class MyNewComboBox : ComboBox
     { 
     }
 }

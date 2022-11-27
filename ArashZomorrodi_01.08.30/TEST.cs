@@ -13,25 +13,43 @@ namespace ArashZomorrodi_01._08._30
     public partial class TEST : Form
     {
         //Empty Response Checker(Human)
-        static void EmptyCheckerStudent(string fname, string lname, string id, string address,string  birthdate, string sid,string entrysemester,string major)
+        Boolean EmptyCheckerStudent(string fname, string lname, string id, string address,string  birthdate, string sid,string entrysemester,string major)
         {
-            if (fname == "") MessageBox.Show("مقدار نام نباید خالی باشد","خطا",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            if (lname == "") MessageBox.Show("مقدار نام خانوادگی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (id == "") MessageBox.Show("مقدار کد ملی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (address == "") MessageBox.Show("مقدار نشانی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (birthdate == "") MessageBox.Show("مقدار تاریخ تولد نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (sid == "") MessageBox.Show("مقدار شماره دانشجویی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (entrysemester == "") MessageBox.Show("مقدار ترم ورود نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (fname == "")  MessageBox.Show("مقدار نام نباید خالی باشد","خطا",MessageBoxButtons.OK,MessageBoxIcon.Error); 
+            if (lname == "")  MessageBox.Show("مقدار نام خانوادگی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+            if (id == "")  MessageBox.Show("مقدار کد ملی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (address == "")  MessageBox.Show("مقدار نشانی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (birthdate == "")  MessageBox.Show("مقدار تاریخ تولد نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (sid == "")  MessageBox.Show("مقدار شماره دانشجویی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (entrysemester == "") MessageBox.Show("مقدار ترم ورود نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             if (major == "") MessageBox.Show("مقدار رشته نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (fname == "" || lname == "" || id == "" || address == "" || birthdate == "" || sid == "" || entrysemester == "" || major == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+
+            }
         }
         //Empty Response Checker(Student)
-        static void EmptyCheckerHuman(string fname, string lname, string id, string address, string birthdate)
+        Boolean EmptyCheckerHuman(string fname, string lname, string id, string address, string birthdate)
         {
             if (fname == "") MessageBox.Show("مقدار نام نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (lname == "") MessageBox.Show("مقدار نام خانوادگی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (id == "") MessageBox.Show("مقدار کد ملی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (address == "") MessageBox.Show("مقدار نشانی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (birthdate == "") MessageBox.Show("مقدار تاریخ تولد نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (lname == "") MessageBox.Show("مقدار نام خانوادگی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (id == "") MessageBox.Show("مقدار کد ملی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (address == "") MessageBox.Show("مقدار نشانی نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (birthdate == "") MessageBox.Show("مقدار تاریخ تولد نباید خالی باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            if (fname == "" || lname == "" || id == "" || address == "" || birthdate == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+
+            }
         }
         //Student ID Validation
         Boolean IsStudentIDValid(string mySID)
@@ -41,7 +59,10 @@ namespace ArashZomorrodi_01._08._30
                 MessageBox.Show(".طول شماره دانشجویی باید 14 رقم باشد", "خطا در مقدار شماره دانشجویی", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
 
         //Entry Semester Validation 
@@ -52,7 +73,10 @@ namespace ArashZomorrodi_01._08._30
                 MessageBox.Show(".طول ترم ورود باید 3 رقم باشد", "خطا در مقدار ترم ورود", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
         //ID Validation
         Boolean IsIdValid(string myID)
@@ -62,7 +86,10 @@ namespace ArashZomorrodi_01._08._30
                 MessageBox.Show(".طول کد ملی باید 10 رقم باشد","خطا در مقدار کد ملی",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
         //Date Validation
         int myMonth, myDay;
@@ -82,23 +109,23 @@ namespace ArashZomorrodi_01._08._30
                 MessageBox.Show("خطا در محل قرارگیری ممیز ها\n فرمت صحیح تاریخ : 1398/08/28", "تاریخ وارد شده صحیح نیست", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (myDate.Trim().Substring(7, 1) != "/")
+             if (myDate.Trim().Substring(7, 1) != "/")
             {
                 MessageBox.Show("خطا در محل قرارگیری ممیز ها\n فرمت صحیح تاریخ : 1398/08/28", "تاریخ وارد شده صحیح نیست", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (myDay < 1 || myDay > 31)
+             if (myDay < 1 || myDay > 31)
             {
                 MessageBox.Show("خطا در مقدار روز\n مقدار ماه باید بین 1 تا 31 یاشد", "تاریخ وارد شده صحیح نیست", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            if (myMonth < 1 || myMonth > 12)
+             if (myMonth < 1 || myMonth > 12)
             {
                 MessageBox.Show("خطا در مقدار ماه\n مقدار ماه باید بین 1 تا 12 یاشد", "تاریخ وارد شده صحیح نیست", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (myMonth >= 1 && myMonth <= 6)
+             if (myMonth >= 1 && myMonth <= 6)
             {
                 if (myDay < 1 || myDay > 31)
                 {
@@ -106,7 +133,7 @@ namespace ArashZomorrodi_01._08._30
                     return false;
                 }
             }
-            if (myMonth >= 7 && myMonth <= 11)
+             if (myMonth >= 7 && myMonth <= 11)
             {
                 if (myDay < 1 || myDay > 30)
                 {
@@ -114,7 +141,7 @@ namespace ArashZomorrodi_01._08._30
                     return false;
                 }
             }
-            if (myMonth == 12)
+             if (myMonth == 12)
             {
                 if (myDay < 1 || myDay > 29)
                 {
@@ -138,7 +165,11 @@ namespace ArashZomorrodi_01._08._30
             //    default:
             //        break;
             //}
+
+
             return true;
+            
+
         }
         public TEST()
         {
@@ -216,17 +247,34 @@ namespace ArashZomorrodi_01._08._30
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            //EmptyCheckerStudent(FirstNameTxt.Text,LastNameTxt.Text,IDtxt.Text,AddressTxt.Text,BirthDateTxt.Text,StudentIDtxt.Text,EntrySemesterTxt.Text,MajorCmboBx.Text);
             string BTtxt = BirthDateTxt.Text;
             string idtxt = IDtxt.Text;
             string entsemtxt = EntrySemesterTxt.Text;
             string studentid = StudentIDtxt.Text;
-            IsDateValid(BTtxt);
-            IsIdValid(idtxt);
-            IsEntrySemesterValid(entsemtxt);
-            IsStudentIDValid(studentid);
-            if (StudentCheck.Checked!=true)
+            if (StudentCheck.Checked==true)
             {
+                EmptyCheckerStudent(FirstNameTxt.Text, LastNameTxt.Text, IDtxt.Text, AddressTxt.Text, BirthDateTxt.Text, StudentIDtxt.Text, EntrySemesterTxt.Text, MajorCmboBx.Text);
+                IsDateValid(BTtxt);
+                IsIdValid(idtxt);
+                IsEntrySemesterValid(entsemtxt);
+                IsStudentIDValid(studentid);
+                MessageBox.Show("ID = " + IDtxt.Text + "" +
+                           "\nFirst Name = " + FirstNameTxt.Text + "" +
+                           "\nLast Name = " + LastNameTxt.Text + "" +
+                           "\nBirth Date = " + BirthDateTxt.Text + "" +
+                           "\nAddress = \n" + AddressTxt.Text + "" +
+                           "\n" +
+                           "\nStudent ID = " + StudentIDtxt.Text + "" +
+                           "\nMajor = " + MajorCmboBx.Text + "" +
+                           "\nEntry Semester = " + EntrySemesterTxt.Text + "",
+                           "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            if (StudentCheck.Checked != true)
+            {
+                EmptyCheckerHuman(FirstNameTxt.Text, LastNameTxt.Text, IDtxt.Text, AddressTxt.Text, BirthDateTxt.Text);
+                IsDateValid(BTtxt);
+                IsIdValid(idtxt);
                 MessageBox.Show("ID = " + IDtxt.Text + "" +
                             "\nFirst Name = " + FirstNameTxt.Text + "" +
                             "\nLast Name = " + LastNameTxt.Text + "" +
@@ -234,20 +282,7 @@ namespace ArashZomorrodi_01._08._30
                             "\nAddress = \n" + AddressTxt.Text + "",
                             "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (StudentCheck.Checked == true)
-            {
-                MessageBox.Show("ID = " + IDtxt.Text + "" +
-                            "\nFirst Name = " + FirstNameTxt.Text + "" +
-                            "\nLast Name = " + LastNameTxt.Text + "" +
-                            "\nBirth Date = " + BirthDateTxt.Text + "" +
-                            "\nAddress = \n" + AddressTxt.Text + "" +
-                            "\n" +
-                            "\nStudent ID = "+StudentIDtxt.Text+"" +
-                            "\nMajor = "+MajorCmboBx.Text+"" +
-                            "\nEntry Semester = "+EntrySemesterTxt.Text+"",
-                            "",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-            }
+           
             
         }
     }
